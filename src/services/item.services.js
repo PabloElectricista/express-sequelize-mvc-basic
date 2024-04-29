@@ -1,12 +1,12 @@
-import { sequelize } from '../config/db.js'
+import { sequelize } from '../database/index.js'
 const { Item } = sequelize.models
 
 const insertItem =  (item) => {
   return  Item.create(item);
 };
 
-const retrieveItems =  () => {
-  return  Item.findAll();
+const retrieveItems = async () => {
+  return  await Item.findAll();
 };
 
 const retrieveItem =  (id) => {
